@@ -28,7 +28,6 @@ Project Calico
 Prometheus
 Salt Project
 Telegraf
-Terraform
 Trivy
 Velero
 VMware Application Catalog
