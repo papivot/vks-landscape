@@ -44,6 +44,7 @@ jobs:
       - name: Build Landscape
         run: |
           landscape2 build --data-file landscape.yml --settings-file settings.yml --logos-path hosted_logos --output-dir build
+          sed -i 's/"base_path":"\/vks-landscape"/"base_path":"\/vks-landscape\/"/g' build/index.html
           cp build/index.html build/404.html
 
       - name: Setup Pages

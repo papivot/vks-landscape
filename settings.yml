@@ -8,6 +8,7 @@ foundation: VKS
 
 url: https://papivot.github.io/vks-landscape
 
+base_path: /vks-landscape
 
 colors:
   color1: "rgba(0, 107, 204, 1)"
