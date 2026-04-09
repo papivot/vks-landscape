@@ -1,0 +1,57 @@
+name: Deploy Landscape to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Python dependencies
+        run: |
+          pip install pyyaml
+
+      - name: Install landscape2 CLI
+        run: |
+          wget -qO- https://github.com/cncf/landscape2/releases/latest/download/landscape2-x86_64-unknown-linux-gnu.tar.gz | tar -xz
+          sudo mv landscape2 /usr/local/bin/
+
+      - name: Generate Landscape Data
+        run: python3 generate_landscape.py
+
+      - name: Build Landscape
+        run: landscape2 build --data-file landscape.yml --settings-file settings.yml --logos-path hosted_logos --output-dir build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './build'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

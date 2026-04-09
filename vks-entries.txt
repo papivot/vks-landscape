@@ -1,0 +1,38 @@
+Antrea
+Argo
+Avi Networks
+Carvel
+cert-manager
+Cilium
+CNI
+Container Storage Interface (CSI)
+containerd
+Contour
+CoreDNS
+CRI-O
+Envoy
+etcd
+Fluentd
+Flux
+HAProxy
+Harbor
+Headlamp
+Helm
+Hubble
+istio
+Kubernetes
+Open Policy Agent (OPA)
+OpenTofu
+Pinniped
+Project Calico
+Prometheus
+Salt Project
+Telegraf
+Terraform
+Trivy
+Velero
+VMware Application Catalog
+VMware Aria Operations for Applications
+VMware NSX
+VMware vSphere
+VMware vSphere Kubernetes Service

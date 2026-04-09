@@ -1,0 +1,5 @@
+build/
+hosted_logos/
+landscape.yml
+__pycache__/
+.DS_Store
