@@ -42,7 +42,9 @@ jobs:
         run: python3 generate_landscape.py
 
       - name: Build Landscape
-        run: landscape2 build --data-file landscape.yml --settings-file settings.yml --logos-path hosted_logos --output-dir build
+        run: |
+          landscape2 build --data-file landscape.yml --settings-file settings.yml --logos-path hosted_logos --output-dir build
+          cp build/index.html build/404.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

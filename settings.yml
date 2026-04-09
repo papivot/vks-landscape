@@ -6,7 +6,8 @@
 
 foundation: VKS
 
-url: http://127.0.0.1:8000
+url: https://papivot.github.io/vks-landscape
+
 
 colors:
   color1: "rgba(0, 107, 204, 1)"
