@@ -19,7 +19,7 @@ Harbor
 Headlamp
 Helm
 Hubble
-istio
+Istio
 Kubernetes
 Open Policy Agent (OPA)
 OpenTofu
