@@ -35,7 +35,7 @@ jobs:
 
       - name: Install landscape2 CLI
         run: |
-          wget -qO- https://github.com/cncf/landscape2/releases/latest/download/landscape2-x86_64-unknown-linux-gnu.tar.gz | tar -xz
+          wget -qO- https://github.com/cncf/landscape2/releases/download/v1.1.0/landscape2-x86_64-unknown-linux-gnu.tar.xz | tar -xz
           sudo mv landscape2 /usr/local/bin/
 
       - name: Generate Landscape Data
